@@ -1,6 +1,8 @@
 package com.example.myinterface3
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -17,10 +19,17 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.btnShowImage)
+        val image = findViewById<ImageView>(R.id.imgProfile)
+
+        button.setOnClickListener {
+            image.visibility = ImageView.VISIBLE
+        }
 
         }
     }
-}
+
 
 
